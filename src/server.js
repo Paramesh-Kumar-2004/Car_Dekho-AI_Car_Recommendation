@@ -24,7 +24,8 @@ app.use("/api/recommend", recommendationRoutes);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const buildDir = path.join(__dirname, "./dist");
+const buildDir = path.join(__dirname, "../client/dist");
+console.log(buildDir)
 
 app.use(express.static(buildDir));
 

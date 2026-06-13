@@ -17,7 +17,7 @@ const PreferenceForm = ({ setRecommendations }) => {
 
     try {
         const response = await axios.post(
-            "http://localhost:5000/api/recommend",
+            "https://car-dekho-ai-car-recommendation.onrender.com/api/recommend",
             formData
         );
 

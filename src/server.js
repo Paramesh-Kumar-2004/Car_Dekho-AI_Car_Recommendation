@@ -25,14 +25,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const buildDir = path.join(__dirname, "../client/dist");
-console.log(buildDir)
+// console.log(buildDir)
 
 app.use(express.static(buildDir));
 
-app.get("*", (req, res) => {
+app.use((req, res) => {
     res.sendFile(path.join(buildDir, "index.html"));
 });
-
 
 app.listen(5000, () => {
     console.log("Server Running On Port 5000");

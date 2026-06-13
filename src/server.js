@@ -24,7 +24,7 @@ app.use("/api/recommend", recommendationRoutes);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const buildDir = path.join(__dirname, "../client/dist");
+const buildDir = path.resolve(__dirname, "../client/dist");
 // console.log(buildDir)
 
 app.use(express.static(buildDir));
@@ -33,6 +33,8 @@ app.use((req, res) => {
     res.sendFile(path.join(buildDir, "index.html"));
 });
 
-app.listen(5000, () => {
-    console.log("Server Running On Port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server Running On Port ${PORT}`);
 });
